@@ -1,0 +1,23 @@
+import discord
+from discord.ext import commands
+
+client = commands.Bot(command_prefix="")
+
+Token = 'ODk3MDE5Nzg2OTA5ODcyMTk4.YWPkxw.m2J3GpYIQtwx134k0bGUK2c_ztU'
+
+#當機器人完全準備好時，在終端(terminal/cmd)發送Bot ready!
+@client.event
+async def on_ready():
+    print("Bot ready!")
+
+#當機器人成功連接到 Discord 時，在終端(terminal/cmd)發送Bot connected!
+@client.event
+async def on_connect():
+    print("Bot connected!")
+
+#當客戶端與 Discord 斷開連接，或嘗試連接 Discord 失敗時，在終端(terminal/cmd)發送Bot disconnected!
+@client.event
+async def on_disconnect():
+    print("Bot disconnected!")
+    
+client.run(token)
